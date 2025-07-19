@@ -1,0 +1,211 @@
+/* ==== BASE BODY ==== */
+body {
+  margin: 0;
+  font-family: 'Audiowide', cursive;
+  overflow: hidden;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* ==== BACKGROUNDS ==== */
+body.dark {
+  background: radial-gradient(circle at center, #0b0c1a, #000000);
+  color: #e0e0ff;
+}
+
+body.light {
+  background: linear-gradient(to bottom, #dceeff, #f2f7ff);
+  color: #001f3f;
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent url('https://raw.githubusercontent.com/kymflannery/space-parallax/main/stars.png') repeat;
+  animation: starScroll 200s linear infinite;
+  z-index: 0;
+}
+
+@keyframes starScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: -10000px 5000px; }
+}
+
+/* ==== GAME LAYOUT ==== */
+.galaxy-container {
+  text-align: center;
+  padding: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #00ffff;
+  text-shadow: 0 0 15px #00ffff;
+  margin-bottom: 1rem;
+}
+
+/* ==== CONTROLS (MODE + THEME DROPDOWNS) ==== */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  font-size: 1rem;
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+}
+
+.controls select {
+  margin-left: 0.5rem;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #09121a, #13242f);
+  color: #00ffff;
+  font-family: 'Audiowide', cursive;
+  font-size: 1rem;
+  box-shadow: 0 0 8px #00ffff55;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.controls select:hover {
+  box-shadow: 0 0 12px #00ffffaa, 0 0 30px #00ffff55;
+}
+
+.controls select:focus {
+  box-shadow: 0 0 15px #00ffffcc;
+}
+
+/* ==== STATUS / SCORE ==== */
+.status {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  color: #00e5ff;
+  text-shadow: 0 0 8px #00e5ff;
+}
+
+.score {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+/* ==== GAME BOARD ==== */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 15px;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00ffe5, 0 0 25px #00ffe5 inset;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #fff, 0 0 30px #00ffe5;
+}
+
+.cell.win {
+  background: #00ff90;
+  box-shadow: 0 0 25px #00ff90, 0 0 40px #00ff90;
+  color: #000;
+}
+
+/* ==== EMOJI EFFECT ==== */
+#emojiEffect {
+  font-size: 3rem;
+  margin-top: 10px;
+}
+
+/* ==== RESET BUTTON ==== */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #00ffff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #00ffff;
+  font-family: 'Audiowide', cursive;
+}
+/* ==== STARLIGHT THEME OVERRIDES ==== */
+body.light {
+  background: linear-gradient(to bottom, #eef2f7, #d8ecff);
+  color: #002244;
+}
+
+body.light h1 {
+  color: #3b0a77;
+  text-shadow: 0 0 4px #dab8ff;
+}
+
+body.light .controls label {
+  color: #3b0a77;
+  text-shadow: none;
+}
+
+body.light .controls select {
+  background: linear-gradient(145deg, #f5f8ff, #d4e4f7);
+  color: #3b0a77;
+  box-shadow: 0 0 6px #b4d4ff;
+}
+
+body.light .controls select:hover {
+  box-shadow: 0 0 10px #91bfff;
+}
+
+body.light .controls select:focus {
+  box-shadow: 0 0 12px #6495ed;
+}
+
+body.light .status {
+  color: #4c0082;
+  text-shadow: 0 0 6px #dab8ff;
+}
+
+body.light .cell {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px #ccc inset;
+  color: #4c0082;
+}
+
+body.light .cell:hover {
+  box-shadow: 0 0 12px #91bfff;
+}
+
+body.light .cell.win {
+  background: #ffde59;
+  box-shadow: 0 0 15px #ffde59;
+  color: #3b0a77;
+}
+
+body.light button {
+  background: #4c0082;
+  color: #fff;
+  box-shadow: 0 0 10px #4c0082;
+}

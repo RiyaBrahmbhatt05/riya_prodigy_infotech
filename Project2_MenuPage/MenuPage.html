@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prodigy InfoTech App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="drawer" id="sideDrawer">
+    <a href="#home" onclick="navigateTo('home')">Home Page</a>
+    <a href="#gallery" onclick="navigateTo('gallery')">About Prodigy InfoTech</a>
+  </div>
+
+  <header>
+    <button class="menu-btn" onclick="toggleDrawer()">☰</button>
+    <span class="logo">🚀 Prodigy InfoTech App</span>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+
+  <main id="mainContent">
+    <section id="home">
+      <div class="banner">
+        <h1>Empowering Through Innovation</h1>
+        <p>Welcome to Prodigy InfoTech – Where Technology Meets Talent.</p>
+      </div>
+      <div class="highlights-section">
+        <h2>About Us</h2>
+        <p>At Prodigy InfoTech, we harness the power of bright minds to solve real-world problems. Our initiatives focus on empowering students, professionals, and innovators through internship programs, hands-on training, and real project experience. Join us in redefining the tech landscape.</p>
+      </div>
+    </section>
+
+    <section id="gallery" style="display:none;">
+      <div class="banner">
+        <h1>About Prodigy InfoTech</h1>
+        <p>Explore more about who we are and what we offer.</p>
+      </div>
+      <div class="card-section">
+        <div class="card">
+          <h3>Who We Are</h3>
+          <p>Prodigy InfoTech is a forward-thinking tech company committed to digital innovation and youth empowerment.</p>
+        </div>
+        <div class="card">
+          <h3>Training Programs</h3>
+          <p>We run globally recognized internship programs in web, app, AI/ML, and cybersecurity for hands-on learning.</p>
+        </div>
+        <div class="card">
+          <h3>Global Reach</h3>
+          <p>Our community spans across continents, nurturing future-ready talent and building tech solutions that matter.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Prodigy InfoTech</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
