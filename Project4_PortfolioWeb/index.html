@@ -5,46 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
 </head>
 <body>
+
   <header>
-    <h1>Hi, I'm Your Name</h1>
-    <p><span id="typed"></span></p>
-    <a href="riya_resume.pdf" class="resume-btn" download>Download Resume</a>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="project.html">Projects</a></li>
+</li>
+        <li>
+          <button id="darkModeToggle" title="Toggle dark mode">🌙</button>
+        </li>
+      </ul>
+    </nav>
   </header>
 
-  <section id="home">
-    <div class="placeholder-photo">
-      <span class="icon">👤</span>
-      <p>No Photo Yet</p>
-    </div>
+<section id="home" class="abstract-bg">
+  <div class="abstract-shape"></div>
+  <div class="photo-placeholder">No Photo Yet</div>
+  <h1><span class="typing-text">Learing Fast. Building Real</span></h1>
+  <p><span class="subtyping-text">I’m a passionate tech explorer building creative and practical software solutions.</span></p>
+</section>
 
-    <div class="intro">
-      <h2>Hello! I'm a Tech Explorer 👨‍💻</h2>
-      <p>
-        I’m currently pursuing an Advanced Diploma in Computer Programming and Analysis at Conestoga College.
-        I thrive in collaborative environments and love solving real-world problems with C, C++, HTML, and SQL.
-        I’m also learning design tools like Figma and JustInMind to craft better user experiences.
-      </p>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm currently pursuing an Advanced Diploma in Computer Programming and Analysis at Conestoga College. 
+      Skilled in C, C++, C#, HTML, CSS, SQL, and more, I’ve developed a range of projects involving software systems, games, and database management. 
+      With a strong foundation in logic and a desire to learn, I’m actively seeking an internship to apply my skills in real-world environments.
+    </p>
+    <a id="resume" class="download-resume" href="assets/riya_resume.docx" download>Download My Resume</a> 
+  </section>
 
-      <div class="skills">
-        <h3>Technical Toolbox</h3>
-        <ul>
-          <li>C</li>
-          <li>C++</li>
-          <li>C#</li>
-          <li>HTML/CSS</li>
-          <li>SQL</li>
-          <li>Figma</li>
-          <li>JustInMind</li>
-          <li>Public Speaking</li>
-          <li>Collaboration</li>
-        </ul>
-      </div>
+  <section id="projects">
+    <h2>Explore My Work</h2>
+    <p style="text-align:center;">Click the button below to view all of my projects in detail.</p>
+    <div style="text-align:center;">
+      <a href="project.html">
+        <button class="btn-primary">View My Projects</button>
+      </a>
     </div>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="script.js"></script>
+  <footer>
+    <p>Connect with me:</p>
+    <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon" />
+    </a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon" />
+    </a>
+  </footer>
+
+
 </body>
 </html>
+
+

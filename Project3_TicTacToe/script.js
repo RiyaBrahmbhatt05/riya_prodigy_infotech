@@ -21,25 +21,29 @@ let draws = 0;
 const winEmojis = ["🚀", "🌟", "🛸", "🌌", "🛰️"];
 const drawEmojis = ["🪐", "☄️", "🌠", "🪐"];
 
-const symbols = {
+const symbols = 
+{
   "X": "🌑",
   "O": "🌕"
 };
 
-const winningCombos = [
+const winningCombos = 
+[
   [0, 1, 2], [3, 4, 5], [6, 7, 8],
   [0, 3, 6], [1, 4, 7], [2, 5, 8],
   [0, 4, 8], [2, 4, 6]
 ];
 
-function createBoard() {
+function createBoard() 
+{
   board.innerHTML = "";
   cells = [];
   currentPlayer = "X";
   gameActive = true;
   emojiEffect.textContent = "";
 
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < 9; i++) 
+    {
     const cell = document.createElement("div");
     cell.classList.add("cell");
     cell.addEventListener("click", () => handleCellClick(i));
@@ -50,36 +54,43 @@ function createBoard() {
   statusText.textContent = `Commander ${currentPlayer}'s Turn`;
 }
 
-function handleCellClick(index) {
+function handleCellClick(index) 
+{
   if (!gameActive || cells[index].textContent !== "") return;
 
   makeMove(index, currentPlayer);
 
-  if (checkWin(currentPlayer)) {
+  if (checkWin(currentPlayer)) 
+    {
     endGame(`${currentPlayer}`);
     return;
   }
 
-  if (isDraw()) {
+  if (isDraw()) 
+    {
     endGame("draw");
     return;
   }
 
-  if (vsAI && currentPlayer === "X") {
+  if (vsAI && currentPlayer === "X") 
+    {
     currentPlayer = "O";
     statusText.textContent = `AI's Move...`;
     setTimeout(() => aiMove(), 500);
-  } else if (!vsAI) {
+  } else if (!vsAI) 
+    {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     statusText.textContent = `Commander ${currentPlayer}'s Turn`;
   }
 }
 
-function makeMove(index, player) {
+function makeMove(index, player) 
+{
   cells[index].textContent = symbols[player];
 }
 
-function aiMove() {
+function aiMove() 
+{
   if (!gameActive) return;
 
   const emptyIndices = cells
@@ -89,12 +100,14 @@ function aiMove() {
   const move = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
   makeMove(move, "O");
 
-  if (checkWin("O")) {
+  if (checkWin("O")) 
+    {
     endGame("O");
     return;
   }
 
-  if (isDraw()) {
+  if (isDraw()) 
+    {
     endGame("draw");
     return;
   }
@@ -103,8 +116,10 @@ function aiMove() {
   statusText.textContent = `Commander ${currentPlayer}'s Turn`;
 }
 
-function checkWin(player) {
-  return winningCombos.some(combo => {
+function checkWin(player) 
+{
+  return winningCombos.some(combo => 
+    {
     const [a, b, c] = combo;
     if (
       cells[a].textContent === symbols[player] &&
@@ -120,21 +135,26 @@ function checkWin(player) {
   });
 }
 
-function isDraw() {
+function isDraw() 
+{
   return cells.every(cell => cell.textContent !== "");
 }
 
-function endGame(result) {
+function endGame(result) 
+{
   gameActive = false;
-  if (result === "X") {
+  if (result === "X") 
+    {
     statusText.textContent = `🌑 Commander X Wins!`;
     xWins++;
     emojiEffect.textContent = getRandomEmoji(winEmojis);
-  } else if (result === "O") {
+  } else if (result === "O") 
+    {
     statusText.textContent = vsAI ? `🌕 AI Triumphs!` : `🌕 Commander O Wins!`;
     oWins++;
     emojiEffect.textContent = getRandomEmoji(winEmojis);
-  } else {
+  } else
+     {
     statusText.textContent = "🌌 It's a Draw!";
     draws++;
     emojiEffect.textContent = getRandomEmoji(drawEmojis);
@@ -142,24 +162,28 @@ function endGame(result) {
   updateScoreboard();
 }
 
-function updateScoreboard() {
+function updateScoreboard() 
+{
   xScoreSpan.textContent = xWins;
   oScoreSpan.textContent = oWins;
   drawScoreSpan.textContent = draws;
 }
 
-function getRandomEmoji(array) {
+function getRandomEmoji(array) 
+{
   return array[Math.floor(Math.random() * array.length)];
 }
 
 resetBtn.addEventListener("click", createBoard);
 
-modeSelect.addEventListener("change", () => {
+modeSelect.addEventListener("change", () =>
+   {
   vsAI = modeSelect.value === "ai";
   createBoard();
 });
 
-themeToggle.addEventListener("change", () => {
+themeToggle.addEventListener("change", () => 
+  {
   document.body.className = themeToggle.value;
 });
 

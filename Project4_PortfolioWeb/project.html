@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', 'Roboto', sans-serif;
+      background-color: #f9f7f1;
+      color: #333;
+    }
+
+    nav {
+      background-color: #0a1f44;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #f9f7f1;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #cfa14a;
+    }
+
+    header {
+      background-color: #0a1f44;
+      color: #f9f7f1;
+      padding: 50px 20px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .projects-container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .project {
+      background-color: #ffffff;
+      margin-bottom: 30px;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+      border-left: 6px solid #cfa14a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .project h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #0a1f44;
+    }
+
+    .project p {
+      margin: 0;
+      line-height: 1.6;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+
+  <header>
+    My Projects
+  </header>
+
+  <div class="projects-container">
+    <div class="project">
+      <h3>Library Management System (C Language)</h3>
+      <p>Developed a C-based Library Management System to efficiently manage books using arrays, strings, and control structures.</p>
+    </div>
+
+    <div class="project">
+      <h3>Music Player (C# & WinForms)</h3>
+      <p>A basic media player with playlist management and playback controls.</p>
+    </div>
+
+    <div class="project">
+      <h3>Ninja Game (C# & MonoGame)</h3>
+      <p>Coded a 2D game using C# and MonoGame with player movement, jumping mechanics, and gravity simulation. Created collision detection for platform interactions, creating a simple Mario-like gaming experience.</p>
+    </div>
+
+    <div class="project">
+      <h3>Quiz Game Application (C# Console App)</h3>
+      <p>Implemented a console-based quiz game in C# with multiple-choice questions, feedback, and score tracking. Includes dynamic question insertion and answer validation.</p>
+    </div>
+
+    <div class="project">
+      <h3>Movie Ticket Booking System (C++)</h3>
+      <p>Created a C++ console app for booking, viewing, and cancelling movie tickets. Includes booking ID generation, admin access, and ticket cancellations.</p>
+    </div>
+
+    <div class="project">
+      <h3>Hotel Reservations Management (MySQL)</h3>
+      <p>Designed a MySQL database to manage hotel reservations with room, customer, and reservation tables. Queries check availability, handle bookings, and generate invoices.</p>
+    </div>
+
+    <div class="project">
+      <h3>Sales Report System (SQL Server / SSMS)</h3>
+      <p>Built a database in SQL Server Management Studio to track sales transactions. Queries retrieve and analyze sales data with reports created using Report Builder.</p>
+    </div>
+  </div>
+
+</body>
+</html>

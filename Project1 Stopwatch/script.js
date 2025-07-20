@@ -3,6 +3,7 @@ console.log("✅ script.js is connected!");
 let startTime = 0;
 let elapsedTime = 0;
 let timerInterval = null;
+let lapCount = 0;
 
 const timeDisplay = document.getElementById('countdown');
 const startBtn = document.getElementById('start');
@@ -11,7 +12,8 @@ const resetBtn = document.getElementById('reset');
 const lapBtn = document.getElementById('lap');
 const lapsContainer = document.getElementById('laps');
 
-function formatTime(time) {
+function formatTime(time) 
+{
   const hours = Math.floor(time / 3600000);
   const minutes = Math.floor((time % 3600000) / 60000);
   const seconds = Math.floor((time % 60000) / 1000);
@@ -22,15 +24,18 @@ function formatTime(time) {
   );
 }
 
-function updateTime() {
+function updateTime() 
+{
   elapsedTime = Date.now() - startTime;
   timeDisplay.textContent = formatTime(elapsedTime);
 }
 
-function startTimer() {
-  if (!timerInterval) {
+function startTimer() 
+{
+  if (!timerInterval) 
+    {
     startTime = Date.now() - elapsedTime;
-    timerInterval = setInterval(updateTime, 1000); 
+    timerInterval = setInterval(updateTime, 1000);
   }
 }
 
@@ -42,15 +47,17 @@ function stopTimer() {
 function resetTimer() {
   stopTimer();
   elapsedTime = 0;
+  lapCount = 0;
   timeDisplay.textContent = "00:00:00";
   lapsContainer.innerHTML = "";
 }
 
 function recordLap() {
   if (!timerInterval) return;
+  lapCount++;
   const lapTime = formatTime(elapsedTime);
   const lapItem = document.createElement("li");
-  lapItem.textContent = `Lap: ${lapTime}`;
+  lapItem.textContent = `Lap ${lapCount}: ${lapTime}`;
   lapsContainer.appendChild(lapItem);
 }
 

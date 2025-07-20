@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8">
   <title>Galactic Tic-Tac-Toe</title>
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="dark">
   <div class="stars"></div>
-  <div class="galaxy-container">
+   <div class="galaxy-container">
     <h1>Galactic Tic-Tac-Toe</h1>
 
     <div class="controls">
-      <label>Mode:
-        <select id="mode">
-          <option value="ai">Player vs AI</option>
-          <option value="pvp">Player vs Player</option>
-        </select>
-      </label>
+        <label>Mode:
+          <select id="mode">
+            <option value="ai">Player vs AI</option>
+            <option value="pvp">Player vs Player</option>
+          </select>
+        </label>
 
-      <label>Theme:
-        <select id="themeToggle">
-          <option value="dark">Dark Space</option>
-          <option value="light">Starlight</option>
-        </select>
-      </label>
+        <label>Theme:
+          <select id="themeToggle">
+            <option value="dark">Dark Space</option>
+            <option value="light">Starlight</option>
+          </select>
+        </label>
     </div>
 
     <div class="status">Commander X's Turn</div>
-    <div class="score">
-      🌑 X Wins: <span id="xScore">0</span> | 🌕 O Wins: <span id="oScore">0</span> | 🚀 Draws: <span id="drawScore">0</span>
-    </div>
+        <div class="score">
+          🌑 X Wins: <span id="xScore">0</span> | 🌕 O Wins: <span id="oScore">0</span> | 🚀 Draws: <span id="drawScore">0</span>
+        </div>
 
     <div class="board" id="board"></div>
     <div id="emojiEffect"></div>
@@ -38,5 +40,7 @@
   </div>
 
   <script src="script.js"></script>
+
+
 </body>
 </html>
